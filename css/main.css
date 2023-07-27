@@ -10,7 +10,10 @@
     
     --bcg-clr:#111;
     --font-clr:#f6f6f6;
-    --thumb-clr:rgb(51, 51, 51);    
+    --thumb-clr:rgb(51, 51, 51);   
+    
+    --space04:0.4rem;
+    --space1:1rem;
 }
 /* Body and global */
 body{
@@ -30,7 +33,7 @@ body{
 }
 ::-webkit-scrollbar-thumb {
     background-color: var(--thumb-clr);
-    border-radius: 0.3rem;
+    border-radius: var(--space04);
 }
 
 a{
@@ -47,8 +50,93 @@ a{
     flex-direction:column;
     min-width: 90vw;
     align-items: center;
+    justify-content: center;
     position: relative;
     /* border: 1px solid red; */
+}
+
+.inputbox{
+    position: relative;
+}
+.todo-input{
+    width: 20rem;
+    height: 2.1rem;
+    margin-bottom: .8rem;
+    padding: .4rem .4rem .1rem .4rem;
+    border-radius: .22rem;
+    border: 1px solid #00000066;
+    outline: none;
+    position: relative;
+   
+}
+
+.todo-input ~ label{
+    position: absolute;
+    left: var(--space04);
+    top:var(--space04);
+    transition: all 400ms ease;
+    pointer-events: none;
+}
+
+.todo-input:focus ~ label,
+.todo-input:valid ~ label{
+    transform: scale(.6);
+    top:-.2rem;
+    left:-0.7rem;
+}
+
+.box{
+    padding: 1.5rem 1rem 1rem 1rem;
+    background: rgb(34,171,195);
+    background: linear-gradient(0deg,
+    rgb(253, 190, 131)0%, 
+    rgb(14, 152, 176) 100%);
+    text-align: center;
+    border-radius: 0 var(--space1) var(--space1) var(--space1) ;
+}
+
+.box > h1{
+    padding: 1rem;
+}
+.todo-list{
+    min-height: 20rem;
+    width: 60vw;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    color:black;
+    border-radius:0 var(--space04) var(--space04) var(--space04);
+    position: relative;
+}
+
+.todo-item{
+    min-width:30rem;
+    height: 2.5rem;
+    background-color: rgb(210, 210, 210);
+    padding: var(--space04);
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    margin-bottom: var(--space04);
+    box-shadow: 2px 2px 6px black ;
+}
+.todo-item > a{
+    margin-left:auto;
+    cursor: pointer;
+}
+.todo-item > span{
+    font-family: var(--font1);
+}
+
+
+.completed-title{
+    margin-bottom: var(--space04);
+}
+.completed > .todo-item{
+    background-color: rgb(114, 155, 114);
+    color: white;
 }
 
 
