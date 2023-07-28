@@ -32,7 +32,7 @@ todoInput.onkeyup = ((e) => {
 function add(text) {
     todoItems.push({
         id: Date.now(),
-        text,
+         text,
         completed: false
         });
 
@@ -65,6 +65,7 @@ function markAsUncompleted(id){
         }
     return todo;
     })
+    saveAndRender();
 };
         
     
@@ -113,10 +114,6 @@ function createTodoElement(todo){
     todoDiv.setAttribute('data-id', todo.id);
     todoDiv.className = 'todo-item';
 
-    // Create todo item text
-    const todoTextSpan = document.createElement('span');
-    todoTextSpan.innerHTML = todo.text;
-
     //  Checkbox for list
     const todoInputCheckbox = document.createElement('input');
     todoInputCheckbox.type = 'checkbox';
@@ -125,6 +122,11 @@ function createTodoElement(todo){
         let id = e.target.closest('.todo-item').dataset.id
         e.target.checked ? markAsCompleted(id) : markAsUncompleted(id);
     }
+    
+    // Create todo item text
+    const todoTextSpan = document.createElement('span');
+    todoTextSpan.textContent = todo.text;
+
 
     // Delete button for list
     const todoRemoveBtn = document.createElement('a');

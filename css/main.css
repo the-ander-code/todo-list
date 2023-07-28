@@ -38,7 +38,6 @@ body{
 
 a{
     text-decoration: none;
-    color: var(--font-clr);
 }
 
 
@@ -89,6 +88,7 @@ a{
 
 /** Box */
 .box{
+    margin: 2rem;
     padding: 1.5rem 1rem 1rem 1rem;
     background: rgb(34,171,195);
     background: linear-gradient(0deg,
@@ -96,6 +96,7 @@ a{
     rgb(14, 152, 176) 100%);
     text-align: center;
     border-radius: 0 var(--space1) var(--space1) var(--space1) ;
+    position: relative;
 }
 
 .box > h1{
@@ -119,13 +120,13 @@ a{
 .todo-item{
     min-width:30rem;
     height: 2.5rem;
-    background-color: rgb(210, 210, 210);
+    background-color: rgb(255, 237, 210);
     padding: var(--space04);
     display: flex;
     align-items: center;
     white-space: nowrap;
     margin-bottom: var(--space04);
-    box-shadow: 2px 2px 6px black ;
+    box-shadow: 2px 2px 4px black ;
 }
 .todo-item > a {
     margin-left:auto;
@@ -134,7 +135,9 @@ a{
 .todo-item > span{
     font-family: var(--font1);
 }
-
+[type="checkbox"]{
+    margin-right: var(--space04);
+}
 
 .completed-title{
     margin-bottom: var(--space04);
@@ -142,6 +145,12 @@ a{
 .completed > .todo-item{
     background-color: rgb(114, 155, 114);
     color: white;
+}
+.completed > a{
+    color: black;
+}
+.empty {
+    margin-bottom: var(--space04);
 }
 
 
