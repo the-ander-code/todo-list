@@ -15,7 +15,7 @@
     --space04:0.4rem;
     --space1:1rem;
 }
-/* Body and global */
+/** Body and global */
 body{
     background-color: var(--bcg-clr);
     color: var(--font-clr);
@@ -117,6 +117,9 @@ a{
 .todos{
     gap:2rem;
 }
+
+
+/** TodoItems */
 .todo-item{
     min-width:30rem;
     height: 2.5rem;
@@ -131,6 +134,8 @@ a{
 .todo-item > a {
     margin-left:auto;
     cursor: pointer;
+    opacity: 0.6;
+    transition: all 350ms ease ;
 }
 .todo-item > span{
     font-family: var(--font1);
@@ -148,47 +153,15 @@ a{
 }
 .completed > a{
     color: black;
+    opacity: 0.6;
 }
 .empty {
     margin-bottom: var(--space04);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.todo-item > a:hover {
+    opacity: 1;
+    transform: scale(1.01);
+}
 
 /* Footer */
 .navlink{
@@ -203,7 +176,7 @@ a{
 }
 .navlink:hover{
     opacity: 1;
-    transform: scale(1.01);
+    transform: scale(1.05);
 }
 
 footer{
@@ -214,7 +187,6 @@ footer{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--cta-clr);
     min-width: 100vw;
 }
 .footer-text{
