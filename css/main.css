@@ -54,6 +54,40 @@ a{
     /* border: 1px solid red; */
 }
 
+/** Box */
+.box{
+    margin: 2rem;
+    padding: 1.5rem 1rem 1rem 1rem;
+    background: rgb(34,171,195);
+    background: linear-gradient(0deg,
+    rgb(253, 190, 131)0%, 
+    rgb(14, 152, 176) 100%);
+    text-align: center;
+    border-radius: 0 var(--space1) var(--space1) var(--space1) ;
+    position: relative;
+}
+.box > h1{
+    padding: 1rem;
+}
+
+
+/** Todos */
+.todo-list{
+    min-height: 20rem;
+    width: 60vw;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    color:black;
+    border-radius:0 var(--space04) var(--space04) var(--space04);
+    position: relative;
+}
+.todos{
+    gap:2rem;
+    position: relative;
+}
 
 /** Input */
 .inputbox{
@@ -68,7 +102,6 @@ a{
     border: 1px solid #00000066;
     outline: none;
     position: relative;
-   
 }
 
 .todo-input ~ label{
@@ -86,43 +119,11 @@ a{
     left:-0.7rem;
 }
 
-/** Box */
-.box{
-    margin: 2rem;
-    padding: 1.5rem 1rem 1rem 1rem;
-    background: rgb(34,171,195);
-    background: linear-gradient(0deg,
-    rgb(253, 190, 131)0%, 
-    rgb(14, 152, 176) 100%);
-    text-align: center;
-    border-radius: 0 var(--space1) var(--space1) var(--space1) ;
-    position: relative;
-}
-
-.box > h1{
-    padding: 1rem;
-}
-.todo-list{
-    min-height: 20rem;
-    width: 60vw;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    color:black;
-    border-radius:0 var(--space04) var(--space04) var(--space04);
-    position: relative;
-}
-.todos{
-    gap:2rem;
-}
-
-
 /** TodoItems */
 .todo-item{
-    min-width:30rem;
-    height: 2.5rem;
+    position: relative;
+    min-width:35rem;
+    min-height: 2.5rem;
     background-color: rgb(255, 237, 210);
     padding: var(--space04);
     display: flex;
@@ -203,4 +204,34 @@ footer{
 
 .footer-text-div{
     display: flex;
+}
+
+
+@media (max-width: 970px){
+    .todo-item{
+    min-width: 25rem;
+}
+}
+@media (max-width: 740px){
+    .todo-item{
+    min-width: 20rem;
+}
+
+}
+@media (max-width: 550px){
+    .todo-input{
+        max-width: 15rem ;
+    }
+    .todo-item{
+        min-width: 15rem;
+}
+}
+
+@media (max-width: 435px){
+    .todo-input{
+        max-width: 12rem ;
+    }
+    .todo-item{
+        min-width: 12rem;
+}
 }
